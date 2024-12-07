@@ -3,6 +3,7 @@ import { ProveedoresModule } from './proveedores/proveedores.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { RegistrosModule } from './registros/registros.module';
+import { AsistenciasModule } from './asistencias/asistencias.module';
 
 @Module({
   imports: [
@@ -14,10 +15,10 @@ import { RegistrosModule } from './registros/registros.module';
     password:'',
     database:'proyectostak',
     entities:[__dirname + '/**/*.entity{.ts,.js}'],
-    synchronize:true
+    synchronize:false
 
 
-  }),ProveedoresModule, UsuariosModule, RegistrosModule],
+  }),ProveedoresModule, UsuariosModule, RegistrosModule, AsistenciasModule],
   controllers: [],
   providers: [],
 })
