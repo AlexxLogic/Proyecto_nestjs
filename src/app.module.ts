@@ -4,6 +4,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { RegistrosModule } from './registros/registros.module';
 import { AsistenciasModule } from './asistencias/asistencias.module';
+import { AsistenciasAdministradorModule } from './asistencias administracion/asistenciasa.module';
+import { AsistenciasObreroModule } from './asistencias obrero/asistenciasa.module';
 
 @Module({
   imports: [
@@ -18,7 +20,7 @@ import { AsistenciasModule } from './asistencias/asistencias.module';
     synchronize:false
 
 
-  }),ProveedoresModule, UsuariosModule, RegistrosModule, AsistenciasModule],
+  }),ProveedoresModule, UsuariosModule, RegistrosModule, AsistenciasModule, AsistenciasAdministradorModule, AsistenciasObreroModule],
   controllers: [],
   providers: [],
 })

@@ -1,9 +1,9 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { AsistenciasService } from './asistencias.service';
+import { AsistenciasService } from './asistenciasa.service';
 import { CreateAsistenciaDto } from './dto/create-asistencia.dto';
 import { UpdateAsistenciaDto } from './dto/update-asistencia.dto';
 
-@Controller('asistencias-administracion')
+@Controller('asistenciasadministracion')
 export class AsistenciasController {
   constructor(private readonly asistenciasService: AsistenciasService) {}
 

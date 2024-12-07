@@ -3,11 +3,11 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateAsistenciaDto } from './dto/create-asistencia.dto';
 import { UpdateAsistenciaDto } from './dto/update-asistencia.dto';
-import { Asistencias } from './entities/asistencias.entity';
+import { Asistenciasobrero } from './entities/asistencias.entity';
 
 @Injectable()
 export class AsistenciasService {
-  constructor(@InjectRepository(Asistencias) private AsistenciasRepository:Repository<Asistencias>){}
+  constructor(@InjectRepository(Asistenciasobrero) private AsistenciasRepository:Repository<Asistenciasobrero>){}
 
   async create(createAsistenciaDto: CreateAsistenciaDto) {
     try {
@@ -16,7 +16,7 @@ export class AsistenciasService {
     }
     catch (error) {
       console.log(error)
-      throw new ConflictException(`el obrero ya esta registrado`)     
+      throw new ConflictException(`agente administrivo ya esta registrado`)     
     }
   }
 
@@ -31,7 +31,7 @@ export class AsistenciasService {
       }
     })
   if (!res){
-    throw new NotFoundException(`no se encontro el obrero`)
+    throw new NotFoundException(`no se encontro el agente administrivo`)
   }
   return res;
   }
@@ -39,7 +39,7 @@ export class AsistenciasService {
   async update(id: number, updateAsistenciaDto: UpdateAsistenciaDto) {
     const res = await this.AsistenciasRepository.update({id},updateAsistenciaDto)
     if (!res){
-      throw new NotFoundException(`no se ha encontrado el obrero`)
+      throw new NotFoundException(`no se ha encontrado el agente administrivo`)
     }
     return res;
     
@@ -48,7 +48,7 @@ export class AsistenciasService {
   async remove(id: number) {
     const res = await this.AsistenciasRepository.delete({id})
   if (!res){
-    throw new NotFoundException(`no se ha encontrado el obrero`)
+    throw new NotFoundException(`no se ha encontrado el agente administrivo`)
   }
   return res;
   }

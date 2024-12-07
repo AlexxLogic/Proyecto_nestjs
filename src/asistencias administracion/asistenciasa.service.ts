@@ -3,11 +3,11 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateAsistenciaDto } from './dto/create-asistencia.dto';
 import { UpdateAsistenciaDto } from './dto/update-asistencia.dto';
-import { Asistencias } from './entities/asistencias.entity';
+import { AsistenciasAdministrador } from './entities/asistencias.entity';
 
 @Injectable()
 export class AsistenciasService {
-  constructor(@InjectRepository(Asistencias) private AsistenciasRepository:Repository<Asistencias>){}
+  constructor(@InjectRepository(AsistenciasAdministrador) private AsistenciasRepository:Repository<AsistenciasAdministrador>){}
 
   async create(createAsistenciaDto: CreateAsistenciaDto) {
     try {

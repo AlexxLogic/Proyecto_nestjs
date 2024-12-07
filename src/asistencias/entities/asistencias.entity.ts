@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn } from "typeorm"
 
-@Entity({name: 'personalDocentes'})
+@Entity({name: 'personalDocente'})
 export class Asistencias {
     @PrimaryGeneratedColumn()
     id:number
@@ -8,7 +8,7 @@ export class Asistencias {
     @Column({unique:true})
     nombreApellido:string
 
-    @Column({unique:true})
+    @Column()
     diasTotales:number
 
     @Column()
