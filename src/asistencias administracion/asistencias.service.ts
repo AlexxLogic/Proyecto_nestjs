@@ -16,7 +16,7 @@ export class AsistenciasService {
     }
     catch (error) {
       console.log(error)
-      throw new ConflictException(`El docente ya esta registrado`)     
+      throw new ConflictException(`agente administrivo ya esta registrado`)     
     }
   }
 
@@ -31,7 +31,7 @@ export class AsistenciasService {
       }
     })
   if (!res){
-    throw new NotFoundException(`no se encontro el proveedor`)
+    throw new NotFoundException(`no se encontro el agente administrivo`)
   }
   return res;
   }
@@ -39,7 +39,7 @@ export class AsistenciasService {
   async update(id: number, updateAsistenciaDto: UpdateAsistenciaDto) {
     const res = await this.AsistenciasRepository.update({id},updateAsistenciaDto)
     if (!res){
-      throw new NotFoundException(`no se ha encontrado el proveedor`)
+      throw new NotFoundException(`no se ha encontrado el agente administrivo`)
     }
     return res;
     
@@ -48,7 +48,7 @@ export class AsistenciasService {
   async remove(id: number) {
     const res = await this.AsistenciasRepository.delete({id})
   if (!res){
-    throw new NotFoundException(`no se ha encontrado el producto`)
+    throw new NotFoundException(`no se ha encontrado el agente administrivo`)
   }
   return res;
   }
