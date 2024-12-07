@@ -15,7 +15,7 @@ import { AsistenciasModule } from './asistencias/asistencias.module';
     password:'',
     database:'proyectostak',
     entities:[__dirname + '/**/*.entity{.ts,.js}'],
-    synchronize:true
+    synchronize:false
 
 
   }),ProveedoresModule, UsuariosModule, RegistrosModule, AsistenciasModule],
